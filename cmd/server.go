@@ -122,6 +122,4 @@ func init() {
 
 	serverCmd.PersistentFlags().BoolP("line-number", "n", false, "line number")
 	_ = viper.BindPFlag("general.LineNumMode", serverCmd.PersistentFlags().Lookup("line-number"))
-
-	serverCmd.PersistentFlags().BoolP("debug", "", false, "debug mode")
 }
