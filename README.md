@@ -23,8 +23,9 @@ go get -u github.com/noborus/ovcs
 ### psql
 
 Run this shell script.
-[https://github.com/noborus/ovcs/blob/main/psql.sh](https://github.com/noborus/ovcs/blob/main/psql.sh). 
+[https://github.com/noborus/ovcs/blob/main/psql.sh](https://github.com/noborus/ovcs/blob/main/psql.sh).
 
+(You need to have tmux and psql installed).
 
 ```sh
 sh psql.sh [psql option]
@@ -36,8 +37,9 @@ sh psql.sh [psql option]
 ### mysql
 
 Run this shell script.
-[https://github.com/noborus/ovcs/blob/main/mysql.sh](https://github.com/noborus/ovcs/blob/main/mysql.sh). 
+[https://github.com/noborus/ovcs/blob/main/mysql.sh](https://github.com/noborus/ovcs/blob/main/mysql.sh).
 
+(You need to have tmux and mysql-client installed).
 
 ```sh
 sh mysql.sh [mysql option]
