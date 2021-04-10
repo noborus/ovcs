@@ -116,6 +116,12 @@ func init() {
 	serverCmd.PersistentFlags().StringP("column-delimiter", "d", ",", "column delimiter")
 	_ = viper.BindPFlag("general.ColumnDelimiter", serverCmd.PersistentFlags().Lookup("column-delimiter"))
 
+	rootCmd.PersistentFlags().BoolP("follow-mode", "f", false, "follow mode")
+	_ = viper.BindPFlag("general.FollowMode", rootCmd.PersistentFlags().Lookup("follow-mode"))
+
+	rootCmd.PersistentFlags().BoolP("follow-all", "A", false, "follow all")
+	_ = viper.BindPFlag("general.FollowAll", rootCmd.PersistentFlags().Lookup("follow-all"))
+
 	// Config
 	serverCmd.PersistentFlags().BoolP("disable-mouse", "", false, "disable mouse support")
 	_ = viper.BindPFlag("DisableMouse", serverCmd.PersistentFlags().Lookup("disable-mouse"))
