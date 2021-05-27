@@ -3,7 +3,6 @@ package cmd
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net"
 	"os"
@@ -56,7 +55,7 @@ func server() {
 	}
 
 	s := SockAddr
-	doc.ReadAll(ioutil.NopCloser(bytes.NewBufferString(s)))
+	doc.ReadAll(bytes.NewBufferString(s))
 
 	ov, err := oviewer.NewOviewer(doc)
 	if err != nil {
