@@ -3,7 +3,7 @@ module github.com/noborus/ovcs
 go 1.16
 
 require (
-	github.com/noborus/ov v0.9.6
+	github.com/noborus/ov v0.10.0
 	github.com/spf13/cobra v1.3.0
 	github.com/spf13/viper v1.10.1
 )
