@@ -37,7 +37,9 @@ func receive(ov *oviewer.Root, l net.Listener) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		doc.ReadAll(conn)
+		if err := doc.ControlReader(conn, nil); err != nil {
+			log.Fatal(err)
+		}
 		ov.AddDocument(doc)
 	}
 }
@@ -55,7 +57,10 @@ func server() {
 	}
 
 	s := SockAddr
-	doc.ReadAll(bytes.NewBufferString(s))
+	if err := doc.ControlReader(bytes.NewBufferString(s), nil); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 
 	ov, err := oviewer.NewOviewer(doc)
 	if err != nil {

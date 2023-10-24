@@ -19,10 +19,10 @@ then
 	sleep 1
     done
     tmux send-keys -t $SESSION:0.1 "psql $*" C-m
-    tmux send-keys -t $SESSION:0.1 "\setenv PAGER 'ovcs client -p $HELPSOCK'" C-m
+    tmux send-keys -t $SESSION:0.1 "\setenv PSQL_PAGER 'ovcs client -p $HELPSOCK'" C-m
     tmux send-keys -t $SESSION:0.1 "\?" C-m
     tmux send-keys -t $SESSION:0.1 "\d" C-m
-    tmux send-keys -t $SESSION:0.1 "\setenv PAGER 'ovcs client  -p $OVSOCK'" C-m
+    tmux send-keys -t $SESSION:0.1 "\setenv PSQL_PAGER 'ovcs client  -p $OVSOCK'" C-m
     tmux select-pane -t $SESSION:0.1
 fi
 
