@@ -42,8 +42,8 @@ github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyua
 github.com/mitchellh/mapstructure v1.5.0/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/noborus/guesswidth v0.3.4 h1:+iKmbm0iFTS3pksIOKQQvLVZVOKNZHavqJoFK2mPoTQ=
 github.com/noborus/guesswidth v0.3.4/go.mod h1:2F1sqiazKIwuSRjQTweQHPFJcjV5375jYUrTik9/V5k=
-github.com/noborus/ov v0.33.1 h1:+Bg59S+isGe3e/BgUax84yTyR1+zjMoKZDmfisaDjI0=
-github.com/noborus/ov v0.33.1/go.mod h1:Pz54YZuLrOa/nC4TaVCpSiHcM98KwLYsSXh820VAxP4=
+github.com/noborus/ov v0.33.2 h1:s25LWDv5LzjYPv0GQUUQux26xbNUp+mQ1+AJObxf9t8=
+github.com/noborus/ov v0.33.2/go.mod h1:Pz54YZuLrOa/nC4TaVCpSiHcM98KwLYsSXh820VAxP4=
 github.com/pelletier/go-toml/v2 v2.1.1 h1:LWAJwfNvjQZCFIDKWYQaM62NcYeYViCmWIwmOStowAI=
 github.com/pelletier/go-toml/v2 v2.1.1/go.mod h1:tJU2Z3ZkXwnxa4DPO899bsyIoywizdUvyaeZurnPPDc=
 github.com/pierrec/lz4 v2.6.1+incompatible h1:9UY3+iC23yxF0UfGaYrGplQ+79Rg+h/q9FV9ix19jjM=
