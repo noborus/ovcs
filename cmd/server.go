@@ -50,13 +50,25 @@ func server() {
 		os.Exit(1)
 	}
 
+	s := SockAddr
+	if err := cleanup(s); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	l, err := net.Listen("unix", SockAddr)
+	if err != nil {
+		fmt.Printf("listen error: %s\n", err.Error())
+		os.Exit(1)
+	}
+	defer l.Close()
+
 	doc, err := oviewer.NewDocument()
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 
-	s := SockAddr
 	if err := doc.ControlReader(bytes.NewBufferString(s), nil); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -69,20 +81,22 @@ func server() {
 	}
 	ov.SetConfig(config)
 
-	l, err := net.Listen("unix", SockAddr)
-	if err != nil {
-		fmt.Printf("listen error: %s", err.Error())
-		os.Exit(1)
-		log.Fatal("listen error:", err)
-	}
-	defer l.Close()
-
 	go receive(ov, l)
 
 	if err := ov.Run(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+}
+
+func cleanup(s string) error {
+	conn, err := net.Dial("unix", s)
+	if err != nil {
+		os.Remove(s)
+		return nil
+	}
+	conn.Close()
+	return fmt.Errorf("address already in use %s", s)
 }
 
 func init() {
