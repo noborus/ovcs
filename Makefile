@@ -1,6 +1,6 @@
 BINARY_NAME := ovcs
 SRCS := $(shell git ls-files '*.go')
-LDFLAGS := "-X main.Version=$(shell git describe --tags --abbrev=0 --always) -X main.Revision=$(shell git rev-parse --verify --short HEAD)"
+LDFLAGS := "-X github.com/noborus/ovcs/cmd.Version=$(shell git describe --tags --abbrev=0 --always) -X github.com/noborus/ovcs/cmd.Revision=$(shell git rev-parse --verify --short HEAD)"
 
 all: build
 

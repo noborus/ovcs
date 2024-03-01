@@ -24,8 +24,9 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "ovcs",
-	Short: "The client/server of the terminal pager ov",
+	Use:     "ovcs",
+	Version: fmt.Sprintf("%s (rev: %s)", Version, Revision),
+	Short:   "The client/server of the terminal pager ov",
 	Long: `This is the client/server method version of terminal pager ov.
 Pipe to client to be displayed on server.`,
 }
