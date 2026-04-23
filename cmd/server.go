@@ -12,9 +12,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-var (
-	config oviewer.Config
-)
+var config oviewer.Config
 
 // serverCmd represents the base command when called without any subcommands
 var serverCmd = &cobra.Command{
