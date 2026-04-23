@@ -29,7 +29,7 @@ func client() {
 		return
 	}
 	defer conn.Close()
-	var reader = bufio.NewReader(os.Stdin)
+	reader := bufio.NewReader(os.Stdin)
 
 	for {
 		buf, isPrefix, err := reader.ReadLine()
