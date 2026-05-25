@@ -1,3 +1,5 @@
+version: 2
+
 before:
   hooks:
     - go mod tidy
@@ -38,15 +40,19 @@ archives:
   -
     id: ovcs-archives
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
-    builds:
+    ids:
     - ovcs-linux
     - ovcs-other
-    format: zip
+    formats: [zip]
+
+release:
+  extra_files:
+    - glob: ./dist/homebrew/*.rb
 
 nfpms:
   -
     id: ovcs-nfpms
-    builds:
+    ids:
     - ovcs-linux
     homepage: https://github.com/noborus/ovcs
     maintainer: Noboru Saito <noborusai@gmail.com>
@@ -64,6 +70,7 @@ brews:
       owner: noborus
       name: homebrew-tap
       token: "{{ .Env.TAP_GITHUB_TOKEN }}"
+    skip_upload: true
     commit_author:
       name: noborus
       email: noborusai@gmail.com
